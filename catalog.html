@@ -1,0 +1,1046 @@
+﻿<!DOCTYPE html>
+<html lang="ru" xmlns="http://www.w3.org/1999/html">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="cleartype" content="on">
+    <meta name="MobileOptimized" content="320">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+
+	<title>Catalog</title>
+
+	<!-- jquery -->
+	<script src="js/jquery-2.1.4.min.js"></script>
+
+	<!-- bootstrap -->
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/bootstrap-slider.css">
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/bootstrap-slider.js"></script>
+
+	<!-- styles -->
+	<link rel="stylesheet" href="css/caroucel.css">
+	<link rel="stylesheet" href="css/fonts.css">
+	<link rel="stylesheet" href="css/jquery.formstyler.css">
+	<link rel="stylesheet" href="css/style.css">
+	
+
+	<script src="js/spin.js"></script>
+	<script src="js/jquery.spin.js"></script>
+	<script src="js/jquery.flexnav.min.js"></script>
+	<script src="js/owl.carousel.min.js"></script>
+	<script src="js/jquery.formstyler.min.js"></script>
+	<script src="js/jquery.cookie.js"></script>
+
+	<script src="js/jquery.fs.stepper.js"></script>
+
+	<script src="js/scripts.js"></script>
+</head>
+<body>
+
+<div id="fix-menu"></div>
+
+<!-- Modal -->
+<div class="modal fade" id="callback_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span class="modicon-close" aria-hidden="true"></span>
+				</button>
+				<h4 class="modal-title" id="myModalLabel">Обратный звонок</h4>
+			</div>
+			<div class="modal-body">
+				<span class="modal-text">Прежде всего бросается в глаза тот факт, что только в трёхмерном пространстве может возникнуть то разнообразие явлений, которое мы наблюдаем. </span>
+
+				<form class="call_back_form" method="post" action="">
+					<div class="col-md-5 nopadding">
+						<label>Номер телефона:</label>
+						<input type="text" class="form-control" name="call_phone" value="+7">
+					</div>
+					<div class="col-md-2 nopadding" style="padding:0px 0px 0px 15px !important;">
+						<label>Время:</label>
+						<select class="form-control" name="call_hours">
+							<option value="00">09</option>
+							<option value="00">10</option>
+							<option value="00">11</option>
+							<option value="00">12</option>
+							<option value="00">13</option>
+							<option value="00">14</option>
+							<option value="00">15</option>
+							<option value="00">16</option>
+							<option value="00">17</option>
+							<option value="00">18</option>
+						</select>
+					</div>
+					<div class="col-md-2 nopadding" style="padding:0px 0px 0px 15px !important;">
+						<label>&nbsp</label>
+						<select class="form-control" name="call_minuts">
+							<option value="00">00</option>
+							<option value="00">05</option>
+							<option value="00">10</option>
+							<option value="00">15</option>
+							<option value="00">20</option>
+							<option value="00">25</option>
+							<option value="00">30</option>
+							<option value="00">35</option>
+							<option value="00">40</option>
+							<option value="00">45</option>
+							<option value="00">50</option>
+							<option value="00">55</option>
+						</select>						
+					</div>
+					<div class="col-md-3 nopadding text-right">
+						<label>&nbsp</label>
+						<input type="submit" class="btn btn-call_form" value="Позвонить">
+					</div>
+					<div class="clearfix"></div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<div class="top_side_grey">
+    <div class="col-md-12 nopadding">
+        <div class="top_side">
+            <div class="col-xs-9 col-md-9 nopadding">
+                <ul class="top_menu">
+                    <span class="menu_li_show"><li><a href="#">О магазине</a></li></span>
+                    <span class="menu_li_noshow"><li><a href="#">Доставка и оплата</a></li></span>
+                    <span class="menu_li_show"><li><a href="#">Доставка</a></li></span>
+                    <span class="menu_li_noshow"><li><a href="#">Как сделать заказ</a></li></span>
+                    <span class="menu_li_noshow"><li><a href="#">Гарантия</a></li></span>
+                    <span class="menu_li_noshow"><li><a href="#">Акции</a></li></span>
+                    <span class="menu_li_show"><li><a href="#">Контакты</a></li></span>
+                </ul>
+            </div>
+            <div class="col-xs-3 col-md-3 text-right nopadding">
+                <a href="user/register" class="btn btn-register">Регистрация</a>
+                <a href="user/login" class="btn btn-login">Вход</a>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+    <div class="clearfix"></div>
+</div>
+
+<div class="top_header">
+    <div class="container-fixed">
+        <div class="col-md-12 top_inside">
+            <div class="col-xs-6 col-md-6 nopadding">
+                <a href="/" class="logo"><img src="images/logo.png"></a>
+            </div>
+            <div class="col-xs-6 col-md-6 nopadding">
+                <div class="col-xs-8 nopadding">
+                    <div class="top_phone">8 (495) 755 94 22</div>
+                    <div class="col-xs-5 text-right top_shedule"><span id="header_vrem_show">С 9:00 до 21:00<br>без выходных</span>
+                        <span id="header_vrem_noshow">9:00 - 21:00 без выходных</span></div>
+                    <div class="col-xs-7 text-right top_call_back"><a href="#callback_modal" class="btn btn-call_back" data-toggle="modal" data-target="#callback_modal">Обратный звонок</a></div>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="col-xs-4 nopadding">
+                    <div id="cart_informer">
+                        <div class="col-xs-4 nopadding text-center"><span>4</span><div id="header_kol_tov">товара</div></div>
+                        <div class="col-xs-8 nopadding text-center" id="header_block_none"><span>126 000 руб</span>на сумму</div>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="hide-besk">
+                        <section class="besk-wrapp">
+                            <div>
+                                <a href="#"><img src="images/products/min-prod.jpg" height="55" width="46" alt=""></a>
+                                <span class="besk-title"><a href="#">Детская коляскаawd awd awd Kacper Classic</a></span>
+                                <span><a href="" class="delete_item"></a></span>
+                            </div>
+                            <div>
+                                <a href="#"><img src="images/products/min-prod.jpg" height="55" width="46" alt=""></a>
+                                <span class="besk-title"><a href="#">Детская коляска Kacper Classic</a></span>
+                                <span><a href="" class="delete_item"></a></span>
+                            </div>
+                            <div>
+                                <a href="#"><img src="images/products/min-prod.jpg" height="55" width="46" alt=""></a>
+                                <span class="besk-title"><a href="#">Детская коляска Kacper Classic</a></span>
+                                <span><a href="" class="delete_item"></a></span>
+                            </div>
+                        </section>
+                        <section class="besk-price">
+                            <div>
+                                <div>126 000 <span>руб</span></div>
+                                <div>К оплате</div>
+                            </div>
+                            <input type="button" class="btn btn-check" value="Оформить">
+
+
+                        </section>
+                    </div>
+                    <div class="free_delivery text-right">Бесплатная доставка от 1000 руб</div>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+</div>
+
+<div class="container-fixed" id="blok_menu_noshow">
+    <div class="col-md-12 nopadding in_pages_search">
+        <form action="products" method="post">
+            <div class="col-xs-3 nopadding">
+                <div class="toggle-menu-btn">
+                    <span class="touch-button"></span>
+                    <span class="touch-text">Показать каталог</span>
+                </div>
+            </div>
+            <div class="col-xs-8 nopadding" id="button_noshow">
+                <input type="text"  class="input_search form-control" placeholder="Поиск по названию, артикулю, бренду..." size="20">
+            </div>
+
+            <div class="col-xs-3 nopadding" id="button_show">
+                <input type="text"  class="input_search form-control" placeholder="Поиск по названию, артикулю, бренду..." size="20">
+            </div>
+
+            <div class="col-xs-1 text-right nopadding">
+                <input type="submit" class="btn btn-search" value="Найти">
+            </div>
+            <div class="clearfix"></div>
+        </form>
+    </div>
+    <div class="clearfix"></div>
+</div>
+
+<div class="headerfix_menu" id="page_button_noshow">
+    <div class="container-fixed">
+        <div class="col-md-12 nopadding">
+            <ul class="header_menu">
+                <li><a href="#">Игры и<br>игрушки</a></li>
+                <li><a href="#">Товары для малышей</a></li>
+                <li><a href="#">Спорт и активный отдых</a></li>
+                <li><a href="#">Школа и творчество</a></li>
+                <li><a href="#">Одежда, обувь и аксессуары</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+	<div class="breadcrumbs">
+		<div class="container-fixed">
+			<div class="col-md-12 nopadding">
+				<ul class="bread_li">
+					<li><a href="#">Главная</a></li>
+					<li><a href="#">Товары для малышей</a></li>
+					<li>
+						<div class="dropdown">
+						  <button class="btn btn-none dropdown-toggle" type="button" id="sub_cat" data-toggle="dropdown" aria-haspopup="true">
+						    Коляски
+						    <span class="caret"></span>
+						  </button>
+						  <ul class="dropdown-menu" aria-labelledby="sub_cat">
+						    <li><a href="#">Коляски</a></li>
+						    <li><a href="#">Коляски 2</a></li>
+						    <li><a href="#">Коляски 3</a></li>
+						    <li><a href="#">Коляски 4</a></li>
+						  </ul>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<div class="clearfix"></div>
+		</div>
+	</div>
+
+	<div class="latest-bg category-letest">
+		<div class="container-fixed">
+			<div class="col-md-12 nopadding">
+				<div class="new shadow">
+
+                    <div class="slider-title">
+                        <div class="page_novunu_nazv_strel">
+                            <div class="col-md-12">
+                                <div class="col-xs-4">
+                                    <span class="nav nav-prev pull-right" id="page_novunu_strel_shov_1"></span>
+                                </div>
+                                <div class="col-xs-4">
+                                    <h2 class="pull-left" id="page_novunu_strel_shov_novun">Товары для малышей</h2>
+                                </div>
+                                <div class="col-xs-4">
+                                    <span class="nav nav-next pull-right" id="page_novunu_strel_shov_2"></span>
+                                </div>
+                                <div class="col-xs-12">
+                                    <span id="page_novunu_strel_shov_novun" > <a class="all_new pull-right" href="/new">Все новинки</a></span>
+                                </div>
+                            </div>
+
+
+                        </div>
+                        <div>
+                            <h2 class="pull-left" id="page_novunu_strel_shov_3">Новинки</h2>
+                            <span class="nav nav-next pull-right" id="page_novunu_strel_shov_3"></span>
+                            <span class="nav nav-prev pull-right" id="page_novunu_strel_shov_4"></span>
+                            <span id="button_novunku_noshow"> <a class="all_new pull-right" href="/new">Все новинки</a></span>
+                        </div>
+                    </div>
+
+                    <div class="clearfix" style="
+    margin-bottom: 10px;"></div>
+
+
+
+
+
+                    <div class="slider">
+						<!-- блок -->
+						<div class="block block-product">
+							<div class="details">
+								<a href="#" style="background: url(/images/categ_1.png) 0% 50% no-repeat;">ПОДГУЗНИКИ</a>
+							</div>
+						</div>
+						<!-- конец блока -->
+						<div class="block block-product">
+							<div class="details">
+								<a href="#" style="background: url(/images/categ_2.png) 0% 50% no-repeat;">САЛФЕТКИ</a>
+							</div>
+						</div>
+						<div class="block block-product">
+							<div class="details">
+								<a href="#" style="background: url(/images/categ_3.png) 0% 50% no-repeat;">АВТОКРЕСЛА</a>
+							</div>
+						</div>
+						<div class="block block-product">
+							<div class="details">
+								<a href="#" style="background: url(/images/categ_4.png) 0% 0% no-repeat;">РАДОИНЯНИ, ВИДЕОНЯНИ</a>
+
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="container-fixed">
+		<div class="col-md-12 nopadding">
+        <div class="grid-view pull-right">
+            <div class="col-xs-6 nopadding text-left">
+                <h1 class="cat-title pull-left">Коляски для малышей</h1>
+            </div>
+
+            <div class="col-xs-6 nopadding text-left">
+				   <span class="grid-1"></span>
+				   <span class="grid-2"></span>
+                </div>
+			   	</div>
+			   	<div class="clearfix"></div>
+        <div class="sort">
+
+
+                <div class="first ">
+                <h1 class="words_podobratb">Подобрать</h1>
+                    </div>
+                <div class="second ">
+                    <span id="words_sort_otstup">Сортировать по</span>
+                    <select name="sort" class="form-control select-sort">
+                        <option value="1">Популярности</option>
+                        <option value="2">Рейтингу</option>
+                        <option value="3">Названию</option>
+                        <option value="4">Цене</option>
+                    </select>
+                </div>
+                <div class="third " id="third_noshow">
+                    По
+                    <select name="show_page" class="form-control select-page">
+                        <option value="1">12</option>
+                        <option value="2">24</option>
+                        <option value="3">48</option>
+                        <option value="4">100</option>
+                    </select>
+                    на странице
+                </div>
+                <div class="clearfix"></div>
+
+        </div>
+				<div class="col-md-12 nopadding cata-log">
+
+					<div class="col-md-3 nopadding-left cata-log-in">
+						<div class="filter">
+							<!-- start toggle-->
+							<div class="toggle">
+								<h3>Категория</h3>
+								<div class="toggle-content open">
+									<div class="check">
+										<input type="checkbox" id="cate_1">
+										<label for="cate_1">Для купания в ванной</label>
+									</div>
+									<div class="check">
+										<input type="checkbox" id="cate_2" checked>
+										<label for="cate_2">Игрушки для малышей</label>
+									</div>
+									<div class="check">
+										<input type="checkbox" id="cate_3">
+										<label for="cate_3">Плееры-ночники зайчики Alilo</label>
+									</div>
+									<div class="check">
+										<input type="checkbox" id="cate_4">
+										<label for="cate_4">Развивающие игрушки</label>
+									</div>
+									<div class="check">
+										<input type="checkbox" id="cate_5">
+										<label for="cate_5">Развивающие коврики</label>
+									</div>
+								</div>
+								<!-- end toggle-content -->
+							</div> 
+							<!-- end toggle -->
+							<!-- start toggle-->
+							<div class="toggle">
+								<h3>Возраст</h3>
+								<div class="toggle-content open">
+									<div class="slider_hist">от <input type="text" id="age_min" class="form-control" value="1"> до <input type="text" id="age_max" class="form-control" value="18"></div>
+									<input id="age_sl" type="text" class="age_sl" value="" data-slider-tooltip="hide" data-slider-min="1" data-slider-max="18" data-slider-step="1" data-slider-value="[1,18]"/>
+								</div>
+								<!-- end toggle-content -->
+							</div> 
+							<!-- end toggle -->
+							<div class="toggle">
+								<h3>Цена (руб)</h3>
+								<div class="toggle-content open">
+									<div class="slider_hist">от <input type="text" id="price_min" class="form-control" value="0"> до <input type="text" id="price_max" class="form-control" value="14670"></div>
+									<input id="price_sl" type="text" class="price_sl" value="" data-slider-tooltip="hide" data-slider-min="0" data-slider-max="14670" data-slider-step="1" data-slider-value="[0,14670]"/>
+								</div>
+								<!-- end toggle-content -->
+							</div> 
+							<!-- end toggle -->
+							<!-- start toggle-->
+							<div class="toggle">
+								<h3>Бренды</h3>
+								<div class="toggle-content open">
+									<div class="check">
+										<input type="checkbox" id="brand_1">
+										<label for="brand_1">BabyGo</label><!-- cate_1 -->
+									</div>
+									<div class="check">
+										<input type="checkbox" id="brand_2" checked>
+										<label for="brand_2">Bibi</label>
+									</div>
+									<div class="check">
+										<input type="checkbox" id="brand_3">
+										<label for="brand_3">Canpol Babies</label>
+									</div>
+									<div class="check">
+										<input type="checkbox" id="brand_4">
+										<label for="brand_4">Chicco</label>
+									</div>
+									<div class="check">
+										<input type="checkbox" id="brand_5" checked>
+										<label for="brand_5">ECOIFFIER</label>
+									</div>
+									<div class="check">
+										<input type="checkbox" id="brand_6" checked>
+										<label for="brand_6">Dr Brown's</label>
+									</div>									
+								</div>
+								<!-- end toggle-content -->
+							</div> 
+							<!-- end toggle -->
+
+							<div class="text-center">
+								<input type="submit" class="btn btn-filter-show" value="Показать">
+								<button class="filter-btn-clear"><span>Сбросить все</span></button>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-md-9 nopadding-right no-overflow cata-log-in">
+
+					    <!-- start tovar position -->
+						<div class="block block-product col-md-4">
+							<div class="over-block"><div class="hit-over-block">!<br>хит</div></div>
+							<div class="preview">
+								<span class="beg-new"></span>
+								<a href="#" class="name_pro">
+									<img src="images/products/product_1.png" alt="">
+								</a>
+							</div>
+							<div class="details">
+								<a href="#" class="name_pro">Детская коляска-трансформер Kacper Tessuto</a>
+								<div class="annotation">Детская коляска Graco Mirage W/Parent Tray & Boot - прочная и легкая коляска для взрослеющих деток.</div>
+
+								<table class="features_pro">
+									<tr>
+										<td>Производитель</td>
+										<td><a href="#">Megiixo</a></td>
+									</tr>
+									<tr>
+										<td>Страна</td>
+										<td>Россия</td>
+									</tr>
+									<tr>
+										<td>Габариты</td>
+										<td>1,5 х 2 х 1,8</td>
+									</tr>
+									<tr>
+										<td>Вес</td>
+										<td>15 кг</td>
+									</tr>									
+								</table>
+							</div>
+							<div class="bottom">
+								<form class="variants" action="/cart">
+									<span class="price">409 240 <span>руб.</span></span>
+									<span class="compare_price">809 240 <span>руб.</span></span>
+									<span class="add">
+										<a href="#" class="btn btn-cart"><span>в корзину</span></a>
+									</span>
+
+									<div class="status status-ok">
+										<span class="ico-ok"><span class="glyphicon glyphicon-ok"></span></span> В наличии
+									</div>
+
+									<div class="colors">
+										<span class="colors_head">Цвета:</span>
+										
+											<label><input name="variant" value="2" type="radio"><span style="background:#1d87e9"></span></label>
+											<label><input name="variant" value="3" type="radio"><span style="background:#f1583f"></span></label>						
+									</div>
+								</form>
+							</div>
+						</div>
+						<!-- end tovar position -->
+					    <!-- start tovar position -->
+						<div class="block block-product col-md-4">
+							<div class="over-block"><div class="new-over-block">!<br>новинка</div></div>
+							<div class="preview">
+								<span class="beg-new"></span>
+								<a href="#" class="name_pro">
+									<img src="images/products/product_1.png" alt="">
+								</a>
+							</div>
+							<div class="details">
+								<a href="#" class="name_pro">Детская коляска-трансформер Kacper Tessuto</a>
+								<div class="annotation">Детская коляска Graco Mirage W/Parent Tray & Boot - прочная и легкая коляска для взрослеющих деток.</div>
+
+								<table class="features_pro">
+									<tr>
+										<td>Производитель</td>
+										<td><a href="#">Megiixo</a></td>
+									</tr>
+									<tr>
+										<td>Страна</td>
+										<td>Россия</td>
+									</tr>
+									<tr>
+										<td>Габариты</td>
+										<td>1,5 х 2 х 1,8</td>
+									</tr>
+									<tr>
+										<td>Вес</td>
+										<td>15 кг</td>
+									</tr>									
+								</table>
+							</div>
+							<div class="bottom">
+								<form class="variants" action="/cart">
+									<span class="price">44 902 <span>руб.</span></span>
+									<span class="add">
+										<a href="#" class="btn btn-cart"><span>в корзину</span></a>
+									</span>
+
+									<div class="status status-no">
+										<span class="ico-no"><span class="glyphicon glyphicon-remove"></span></span> Нет в наличии
+									</div>
+								</form>							
+							</div>
+						</div>
+						<!-- end tovar position -->
+					    <!-- start tovar position -->
+						<div class="block block-product col-md-4">
+							<div class="over-block"><div class="act-over-block">!<br>акция</div></div>
+							<div class="preview">
+								<span class="beg-new"></span>
+								<a href="#">
+									<img src="images/products/product_1.png" alt="">
+								</a>
+							</div>
+							<div class="details">
+								<a href="#" class="name_pro">Детская коляска-трансформер Kacper Tessuto</a>
+								<div class="annotation">Детская коляска Graco Mirage W/Parent Tray & Boot - прочная и легкая коляска для взрослеющих деток.</div>
+
+								<table class="features_pro">
+									<tr>
+										<td>Производитель</td>
+										<td><a href="#">Megiixo</a></td>
+									</tr>
+									<tr>
+										<td>Страна</td>
+										<td>Россия</td>
+									</tr>
+									<tr>
+										<td>Габариты</td>
+										<td>1,5 х 2 х 1,8</td>
+									</tr>
+									<tr>
+										<td>Вес</td>
+										<td>15 кг</td>
+									</tr>									
+								</table>								
+							</div>
+							<div class="bottom">
+								<form class="variants" action="/cart">
+									<span class="price">12 230 <span>руб.</span></span>
+									<span class="add">
+										<a href="#" class="btn btn-cart"><span>в корзину</span></a>
+									</span>
+
+									<div class="status status-ok">
+										<span class="ico-ok"><span class="glyphicon glyphicon-ok"></span></span> В наличии
+									</div>
+
+									<div class="colors">
+										<span class="colors_head">Цвета:</span>
+										
+											<label><input name="variant" value="2" type="radio"><span style="background:#1d87e9"></span></label>
+											<label><input name="variant" value="3" type="radio"><span style="background:#f1583f"></span></label>						
+									</div>
+								</form>
+							</div>
+						</div>
+						<!-- end tovar position -->
+					    <!-- start tovar position -->
+						<div class="block block-product col-md-4">
+							<div class="preview">
+								<span class="beg-new"></span>
+								<a href="#">
+									<img src="images/products/product_1.png" alt="">
+								</a>
+							</div>
+							<div class="details">
+								<a href="#" class="name_pro">Детская коляска-трансформер Kacper Tessuto</a>
+								<div class="annotation">Детская коляска Graco Mirage W/Parent Tray & Boot - прочная и легкая коляска для взрослеющих деток.</div>
+
+								<table class="features_pro">
+									<tr>
+										<td>Производитель</td>
+										<td><a href="#">Megiixo</a></td>
+									</tr>
+									<tr>
+										<td>Страна</td>
+										<td>Россия</td>
+									</tr>
+									<tr>
+										<td>Габариты</td>
+										<td>1,5 х 2 х 1,8</td>
+									</tr>
+									<tr>
+										<td>Вес</td>
+										<td>15 кг</td>
+									</tr>									
+								</table>								
+							</div>
+							<div class="bottom">
+								<form class="variants" action="/cart">
+									<span class="price">4 240 <span>руб.</span></span>
+									<span class="add">
+										<a href="#" class="btn btn-cart"><span>в корзину</span></a>
+									</span>
+
+									<div class="status status-ok">
+										<span class="ico-ok"><span class="glyphicon glyphicon-ok"></span></span> В наличии
+									</div>
+
+									<div class="colors">
+										<div class="dropdown">
+										  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+										    Все варианты
+										    <span class="caret"></span>
+										  </button>
+										  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+										    <li>
+										    	<div class="img_mini">
+										    		<img src="images/products/product_1.png" alt="">
+										    	</div>
+										    	<div class="ann_mini">
+											    	<span class="mini_desc">10800 руб</span>
+											    	<span class="mini_name">Проектор звездного неба Roxy-kids Colibri</span>
+													<div class="status text-left status-ok text-aleft">
+														<span class="ico-ok"><span class="glyphicon glyphicon-ok"></span></span> В наличии
+													</div>
+											    </div>
+										    </li>
+										    <li>
+										    	<div class="img_mini">
+										    		<img src="images/products/product_1.png" alt="">
+										    	</div>
+										    	<div class="ann_mini">
+											    	<span class="mini_desc">13800 руб</span>
+											    	<span class="mini_name">Проектор звездного неба Roxy-kids Colibri</span>
+													<div class="status text-left status-ok text-aleft">
+														<span class="ico-ok"><span class="glyphicon glyphicon-ok"></span></span> В наличии
+													</div>
+											    </div>
+										    </li>
+										    <li>
+										    	<div class="img_mini">
+										    		<img src="images/products/product_1.png" alt="">
+										    	</div>
+										    	<div class="ann_mini">
+											    	<span class="mini_desc">10800 руб</span>
+											    	<span class="mini_name">Проектор звездного неба Roxy-kids Colibri</span>
+													<div class="status text-left status-ok text-aleft">
+														<span class="ico-ok"><span class="glyphicon glyphicon-ok"></span></span> В наличии
+													</div>
+											    </div>
+										    </li>
+										    <li>
+										    	<div class="img_mini">
+										    		<img src="images/products/product_1.png" alt="">
+										    	</div>
+										    	<div class="ann_mini">
+											    	<span class="mini_desc">10800 руб</span>
+											    	<span class="mini_name">Проектор звездного неба Roxy-kids Colibri</span>
+													<div class="status text-left status-ok text-aleft">
+														<span class="ico-ok"><span class="glyphicon glyphicon-ok"></span></span> В наличии
+													</div>
+											    </div>
+										    </li>
+										  </ul>
+										</div>
+
+									</div>
+								</form>
+							</div>
+						</div>
+						<!-- end tovar position -->
+					    <!-- start tovar position -->
+						<div class="block block-product col-md-4">
+							<div class="preview">
+								<span class="beg-new"></span>
+								<a href="#">
+									<img src="images/products/product_1.png" alt="">
+								</a>
+							</div>
+							<div class="details">
+								<a href="#" class="name_pro">Детская коляска-трансформер Kacper Tessuto</a>
+								<div class="annotation">Детская коляска Graco Mirage W/Parent Tray & Boot - прочная и легкая коляска для взрослеющих деток.</div>
+
+								<table class="features_pro">
+									<tr>
+										<td>Производитель</td>
+										<td><a href="#">Megiixo</a></td>
+									</tr>
+									<tr>
+										<td>Страна</td>
+										<td>Россия</td>
+									</tr>
+									<tr>
+										<td>Габариты</td>
+										<td>1,5 х 2 х 1,8</td>
+									</tr>
+									<tr>
+										<td>Вес</td>
+										<td>15 кг</td>
+									</tr>									
+								</table>								
+							</div>
+							<div class="bottom">
+								<form class="variants" action="/cart">
+									<span class="price">9 240 <span>руб.</span></span>
+									<span class="add">
+										<a href="#" class="btn btn-cart"><span>в корзину</span></a>
+									</span>
+
+									<div class="status status-ok">
+										<span class="ico-ok"><span class="glyphicon glyphicon-ok"></span></span> В наличии
+									</div>
+
+									<div class="colors">
+										<span class="colors_head">Цвета:</span>
+										
+											<label><input name="variant" value="2" type="radio"><span style="background:#1d87e9"></span></label>
+											<label><input name="variant" value="3" type="radio"><span style="background:#f1583f"></span></label>						
+									</div>
+								</form>
+							</div>
+						</div>
+						<!-- end tovar position -
+					    <!-- start tovar position -->
+						<div class="block block-product col-md-4">
+							<div class="preview">
+								<span class="beg-new"></span>
+								<a href="#">
+									<img src="images/products/product_1.png" alt="">
+								</a>
+							</div>
+							<div class="details">
+								<a href="#" class="name_pro">Детская коляска-трансформер Kacper Tessuto</a>
+								<div class="annotation">Детская коляска Graco Mirage W/Parent Tray & Boot - прочная и легкая коляска для взрослеющих деток.</div>
+
+								<table class="features_pro">
+									<tr>
+										<td>Производитель</td>
+										<td><a href="#">Megiixo</a></td>
+									</tr>
+									<tr>
+										<td>Страна</td>
+										<td>Россия</td>
+									</tr>
+									<tr>
+										<td>Габариты</td>
+										<td>1,5 х 2 х 1,8</td>
+									</tr>
+									<tr>
+										<td>Вес</td>
+										<td>15 кг</td>
+									</tr>									
+								</table>								
+							</div>
+							<div class="bottom">
+								<form class="variants" action="/cart">
+									<span class="price">1 240 <span>руб.</span></span>
+									<span class="add">
+										<a href="#" class="btn btn-cart"><span>в корзину</span></a>
+									</span>
+
+									<div class="status status-ok">
+										<span class="ico-ok"><span class="glyphicon glyphicon-ok"></span></span> В наличии
+									</div>
+
+									<div class="colors">
+										<span class="colors_head">Цвета:</span>
+										
+											<label><input name="variant" value="2" type="radio"><span style="background:#1d87e9"></span></label>
+											<label><input name="variant" value="3" type="radio"><span style="background:#f1583f"></span></label>						
+									</div>
+								</form>
+							</div>
+						</div>
+						<!-- end tovar position -->
+					    <!-- start tovar position -->
+						<!--<div class="block block-product col-md-4">
+							<div class="preview">
+								<span class="beg-new"></span>
+								<a href="#">
+									<img src="images/products/product_1.png" alt="">
+								</a>
+							</div>
+							<div class="details">
+								<a href="#" class="name_pro">Детская коляска-трансформер Kacper Tessuto</a>
+								<div class="annotation">Детская коляска Graco Mirage W/Parent Tray & Boot - прочная и легкая коляска для взрослеющих деток.</div>
+
+								<table class="features_pro">
+									<tr>
+										<td>Производитель</td>
+										<td><a href="#">Megiixo</a></td>
+									</tr>
+									<tr>
+										<td>Страна</td>
+										<td>Россия</td>
+									</tr>
+									<tr>
+										<td>Габариты</td>
+										<td>1,5 х 2 х 1,8</td>
+									</tr>
+									<tr>
+										<td>Вес</td>
+										<td>15 кг</td>
+									</tr>									
+								</table>								
+							</div>
+							<div class="bottom">
+								<form class="variants" action="/cart">
+									<span class="price">429 240 <span>руб.</span></span>
+									<span class="add">
+										<a href="#" class="btn btn-cart"><span>в корзину</span></a>
+									</span>
+
+									<div class="status status-ok">
+										<span class="ico-ok"><span class="glyphicon glyphicon-ok"></span></span> В наличии
+									</div>
+
+									<div class="colors">
+										<span class="colors_head">Цвета:</span>
+										
+											<label><input name="variant" value="2" type="radio"><span style="background:#1d87e9"></span></label>
+											<label><input name="variant" value="3" type="radio"><span style="background:#f1583f"></span></label>						
+									</div>
+								</form>
+							</div>
+						</div>
+						<!-- end tovar position -->
+					    <!-- start tovar position -
+						<div class="block block-product col-md-4">
+							<div class="preview">
+								<span class="beg-new"></span>
+								<a href="#">
+									<img src="images/products/product_1.png" alt="">
+								</a>
+							</div>
+							<div class="details">
+								<a href="#" class="name_pro">Детская коляска-трансформер Kacper Tessuto</a>
+								<div class="annotation">Детская коляска Graco Mirage W/Parent Tray & Boot - прочная и легкая коляска для взрослеющих деток.</div>
+
+								<table class="features_pro">
+									<tr>
+										<td>Производитель</td>
+										<td><a href="#">Megiixo</a></td>
+									</tr>
+									<tr>
+										<td>Страна</td>
+										<td>Россия</td>
+									</tr>
+									<tr>
+										<td>Габариты</td>
+										<td>1,5 х 2 х 1,8</td>
+									</tr>
+									<tr>
+										<td>Вес</td>
+										<td>15 кг</td>
+									</tr>									
+								</table>								
+							</div>
+							<div class="bottom">
+								<form class="variants" action="/cart">
+									<span class="price">4 240 <span>руб.</span></span>
+									<span class="add">
+										<a href="#" class="btn btn-cart"><span>в корзину</span></a>
+									</span>
+
+									<div class="status status-ok">
+										<span class="ico-ok"><span class="glyphicon glyphicon-ok"></span></span> В наличии
+									</div>
+
+									<div class="colors">
+										<span class="colors_head">Цвета:</span>
+										
+											<label><input name="variant" value="2" type="radio"><span style="background:#1d87e9"></span></label>
+											<label><input name="variant" value="3" type="radio"><span style="background:#f1583f"></span></label>
+											<label><input name="variant" value="1" type="radio"><span style="background:#f3f5f6"></span></label>						
+									</div>
+								</form>
+							</div>
+						</div>
+						<!-- end tovar position
+					    <!-- start tovar position
+						<div class="block block-product col-md-4">
+							<div class="preview">
+								<span class="beg-new"></span>
+								<a href="#">
+									<img src="images/products/product_1.png" alt="">
+								</a>
+							</div>
+							<div class="details">
+								<a href="#" class="name_pro">Детская коляска-трансформер Kacper Tessuto</a>
+								<div class="annotation">Детская коляска Graco Mirage W/Parent Tray & Boot - прочная и легкая коляска для взрослеющих деток.</div>
+
+
+							</div>
+							<div class="bottom">
+								<form class="variants" action="/cart">
+									<span class="price">3 240 <span>руб.</span></span>
+									<span class="add">
+										<a href="#" class="btn btn-cart"><span>в корзину</span></a>
+									</span>
+
+									<div class="status status-ok">
+										<span class="ico-ok"><span class="glyphicon glyphicon-ok"></span></span> В наличии
+									</div>
+
+									<div class="colors">
+										<span class="colors_head">Цвета:</span>
+										
+											<label><input name="variant" value="2" type="radio"><span style="background:#1d87e9"></span></label>
+											<label><input name="variant" value="3" type="radio"><span style="background:#f1583f"></span></label>
+											<label><input name="variant" value="2" type="radio"><span style="background:#1353e0"></span></label>						
+									</div>
+								</form>
+							</div>
+						</div>-->
+						<!-- end tovar position -->												
+
+						<div class="navi">
+							<a href="#" class="navi-page all ">Все товары</a>
+							<a href="#" class="navi-prev"></a>
+							<a href="#" class="navi-page current">1</a>
+							<a href="#" class="navi-page ">2</a>
+							<a href="#" class="navi-page ">3</a>
+							<a href="#" class="navi-page ">4</a>
+							<a href="#" class="navi-page ">5</a>
+							<a href="#" class="navi-next"></a>
+						</div>	
+
+					</div>
+
+					<div class="category-desc">
+						Существует бесконечная или как минимум очень большая мультивселенная, заполненная неким скалярным полем. Как долго она существует, откуда сама появилась, каковы условия в этой мультивселенной — мы понятия не имеем. Даже на полшишечки. Но ученые довольно сильно уверены, что в некоторых местах этой мультивселенной скалярное поле начинает падать, надувая пузыри обычных вселенных и образовывая в них привычное нам пространство–время. Наш конкретный пузырь начал надуваться около 13.8 миллиардов лет назад, и скалярное поле в нашей Вселенной, кстати, никуда не делось, теперь оно находится почти в минимуме, но не равно нулю!	
+					</div>
+				</div>
+			</div>
+
+		</div>
+		<div class="clearfix"></div>
+	</div>
+
+	<div id="footer">
+		<div class="container-fixed">
+			<div class="col-md-3 nopadding info">
+				<div class="about">
+					<span class="graylogo"><i></i></span>
+				</div>
+	
+				<div class="footer-menu">
+					<ul>
+						<li><a href="#">О магазине</a></li>
+						<li><a href="#">Доставка и оплата</a></li>
+						<li><a href="#">Как сделать заказ</a></li>
+						<li><a href="#">Гарантия</a></li>
+						<li><a href="#">Акции</a></li>
+						<li><a href="#">Контакты</a></li>
+					</ul>
+				</div>
+				<div class="footer-copy">© Все права защищены  2015</div>
+			</div>
+			<div class="col-md-6 nopadding payment">
+				<h2>Принимаем к оплате</h2>
+				<div class="payments-block">
+					<span class="picon"><i class="sberbank"></i></span>
+					<span class="picon"><i class="alfabank"></i></span>
+					<span class="picon"><i class="visa"></i></span>
+					<span class="picon"><i class="mastercard"></i></span>
+					<span class="picon"><i class="webmoney"></i></span>
+					<span class="picon"><i class="qiwi"></i></span>
+					<span class="picon"><i class="yamoney"></i></span>
+					<span class="picon"><i class="mail"></i></span>
+					<span class="picon"><i class="dollars"></i></span>
+					<span class="picon"><i class="paypal"></i></span>
+					<div class="clearfix"></div>
+				</div>
+				<div class="col-md-5 nopadding">
+					<span class="view-reviews">Смотрите обзоры продуктов<br>присоединяйтесь к нам:</span>
+				</div>
+				<div class="col-md-6 nopadding socio">
+					<ul>
+						<li class="socio-vk"><a href="#"></a></li>
+						<li class="socio-fb"><a href="#"></a></li>
+						<li class="socio-yb"><a href="#"></a></li>
+					</ul>
+				</div>
+				<div class="clearfix"></div>
+			</div>
+			<div class="col-md-3 nopadding contact">
+				<h2>Контакты</h2>
+				<div class="contact-block">
+					<span class="phone">8 (495) 755 94 22</span>
+					<a href="#callback_modal" class="btn btn-call_back" data-toggle="modal" data-target="#callback_modal">Обратный звонок</a>
+					<span class="time">С <strong>9:00 до 21:00</strong> без выходных</span>
+
+					<span class="city">г. Москва</span>
+					<span class="address">ул Лермонтова, д. 34</span>
+				</div>
+			</div>
+			<div class="clearfix"></div>
+		</div>
+	</div>
+
+</body>
+</html>

@@ -1,0 +1,603 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="cleartype" content="on">
+    <meta name="MobileOptimized" content="320">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+
+	<title>News</title>
+
+	<!-- jquery -->
+	<script src="/js/jquery-2.1.4.min.js"></script>
+
+	<!-- bootstrap -->
+	<link rel="stylesheet" href="/css/bootstrap.min.css">
+	<link rel="stylesheet" href="/css/bootstrap-slider.css">
+	<script src="/js/bootstrap.min.js"></script>
+	<script src="/js/bootstrap-slider.js"></script>
+
+	<!-- styles -->
+	<link rel="stylesheet" href="/css/caroucel.css">
+	<link rel="stylesheet" href="/css/fonts.css">
+	<link rel="stylesheet" href="/css/jquery.formstyler.css">
+	<link rel="stylesheet" href="/css/style.css">
+	
+
+	<script src="/js/spin.js"></script>
+	<script src="/js/jquery.spin.js"></script>
+	<script src="/js/jquery.flexnav.min.js"></script>
+	<script src="/js/owl.carousel.min.js"></script>
+	<script src="/js/jquery.formstyler.min.js"></script>
+	<script src="/js/jquery.cookie.js"></script>
+
+	<script src="js/scripts.js"></script>
+</head>
+<body>
+
+<div id="fix-menu"></div>
+
+<!-- Modal -->
+<div class="modal fade" id="callback_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span class="modicon-close" aria-hidden="true"></span>
+				</button>
+				<h4 class="modal-title" id="myModalLabel">Обратный звонок</h4>
+			</div>
+			<div class="modal-body">
+				<span class="modal-text">Прежде всего бросается в глаза тот факт, что только в трёхмерном пространстве может возникнуть то разнообразие явлений, которое мы наблюдаем. </span>
+
+				<form class="call_back_form" method="post" action="">
+					<div class="col-md-5 nopadding">
+						<label>Номер телефона:</label>
+						<input type="text" class="form-control" name="call_phone" value="+7">
+					</div>
+					<div class="col-md-2 nopadding" style="padding:0px 0px 0px 15px !important;">
+						<label>Время:</label>
+						<select class="form-control" name="call_hours">
+							<option value="00">09</option>
+							<option value="00">10</option>
+							<option value="00">11</option>
+							<option value="00">12</option>
+							<option value="00">13</option>
+							<option value="00">14</option>
+							<option value="00">15</option>
+							<option value="00">16</option>
+							<option value="00">17</option>
+							<option value="00">18</option>
+						</select>
+					</div>
+					<div class="col-md-2 nopadding" style="padding:0px 0px 0px 15px !important;">
+						<label>&nbsp</label>
+						<select class="form-control" name="call_minuts">
+							<option value="00">00</option>
+							<option value="00">05</option>
+							<option value="00">10</option>
+							<option value="00">15</option>
+							<option value="00">20</option>
+							<option value="00">25</option>
+							<option value="00">30</option>
+							<option value="00">35</option>
+							<option value="00">40</option>
+							<option value="00">45</option>
+							<option value="00">50</option>
+							<option value="00">55</option>
+						</select>						
+					</div>
+					<div class="col-md-3 nopadding text-right">
+						<label>&nbsp</label>
+						<input type="submit" class="btn btn-call_form" value="Позвонить">
+					</div>
+					<div class="clearfix"></div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="top_side_grey">
+    <div class="col-md-12 nopadding">
+        <div class="top_side">
+            <div class="col-xs-9 col-md-9 nopadding">
+                <ul class="top_menu">
+                    <span class="menu_li_show"><li><a href="#">О магазине</a></li></span>
+                    <span class="menu_li_noshow"><li><a href="#">Доставка и оплата</a></li></span>
+                    <span class="menu_li_show"><li><a href="#">Доставка</a></li></span>
+                    <span class="menu_li_noshow"><li><a href="#">Как сделать заказ</a></li></span>
+                    <span class="menu_li_noshow"><li><a href="#">Гарантия</a></li></span>
+                    <span class="menu_li_noshow"><li><a href="#">Акции</a></li></span>
+                    <span class="menu_li_show"><li><a href="#">Контакты</a></li></span>
+                </ul>
+            </div>
+            <div class="col-xs-3 col-md-3 text-right nopadding">
+                <a href="user/register" class="btn btn-register">Регистрация</a>
+                <a href="user/login" class="btn btn-login">Вход</a>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+    <div class="clearfix"></div>
+</div>
+
+<div class="top_header">
+    <div class="container-fixed">
+        <div class="col-md-12 top_inside">
+            <div class="col-xs-6 col-md-6 nopadding">
+                <a href="/" class="logo"><img src="images/logo.png"></a>
+            </div>
+            <div class="col-xs-6 col-md-6 nopadding">
+                <div class="col-xs-8 nopadding">
+                    <div class="top_phone">8 (495) 755 94 22</div>
+                    <div class="col-xs-5 text-right top_shedule"><span id="header_vrem_show">С 9:00 до 21:00<br>без выходных</span>
+                        <span id="header_vrem_noshow">9:00 - 21:00 без выходных</span></div>
+                    <div class="col-xs-7 text-right top_call_back"><a href="#callback_modal" class="btn btn-call_back" data-toggle="modal" data-target="#callback_modal">Обратный звонок</a></div>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="col-xs-4 nopadding">
+                    <div id="cart_informer">
+                        <div class="col-xs-4 nopadding text-center"><span>4</span><div id="header_kol_tov">товара</div></div>
+                        <div class="col-xs-8 nopadding text-center" id="header_block_none"><span>126 000 руб</span>на сумму</div>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="hide-besk">
+                        <section class="besk-wrapp">
+                            <div>
+                                <a href="#"><img src="images/products/min-prod.jpg" height="55" width="46" alt=""></a>
+                                <span class="besk-title"><a href="#">Детская коляскаawd awd awd Kacper Classic</a></span>
+                                <span><a href="" class="delete_item"></a></span>
+                            </div>
+                            <div>
+                                <a href="#"><img src="images/products/min-prod.jpg" height="55" width="46" alt=""></a>
+                                <span class="besk-title"><a href="#">Детская коляска Kacper Classic</a></span>
+                                <span><a href="" class="delete_item"></a></span>
+                            </div>
+                            <div>
+                                <a href="#"><img src="images/products/min-prod.jpg" height="55" width="46" alt=""></a>
+                                <span class="besk-title"><a href="#">Детская коляска Kacper Classic</a></span>
+                                <span><a href="" class="delete_item"></a></span>
+                            </div>
+                        </section>
+                        <section class="besk-price">
+                            <div>
+                                <div>126 000 <span>руб</span></div>
+                                <div>К оплате</div>
+                            </div>
+                            <input type="button" class="btn btn-check" value="Оформить">
+
+
+                        </section>
+                    </div>
+                    <div class="free_delivery text-right">Бесплатная доставка от 1000 руб</div>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+</div>
+
+<div class="container-fixed" id="blok_menu_noshow">
+    <div class="col-md-12 nopadding in_pages_search">
+        <form action="products" method="post">
+            <div class="col-xs-3 nopadding">
+                <div class="toggle-menu-btn">
+                    <span class="touch-button"></span>
+                    <span class="touch-text">Показать каталог</span>
+                </div>
+            </div>
+            <div class="col-xs-8 nopadding" id="button_noshow">
+                <input type="text"  class="input_search form-control" placeholder="Поиск по названию, артикулю, бренду..." size="20">
+            </div>
+
+            <div class="col-xs-3 nopadding" id="button_show">
+                <input type="text"  class="input_search form-control" placeholder="Поиск по названию, артикулю, бренду..." size="20">
+            </div>
+
+            <div class="col-xs-1 text-right nopadding">
+                <input type="submit" class="btn btn-search" value="Найти">
+            </div>
+            <div class="clearfix"></div>
+        </form>
+    </div>
+    <div class="clearfix"></div>
+</div>
+
+<div class="headerfix_menu" id="page_button_noshow">
+    <div class="container-fixed">
+        <div class="col-md-12 nopadding">
+            <ul class="header_menu">
+                <li><a href="#">Игры и<br>игрушки</a></li>
+                <li><a href="#">Товары для малышей</a></li>
+                <li><a href="#">Спорт и активный отдых</a></li>
+                <li><a href="#">Школа и творчество</a></li>
+                <li><a href="#">Одежда, обувь и аксессуары</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+	<div class="breadcrumbs over_b">
+		<div class="container-fixed">
+			<div class="col-md-12 nopadding">
+				<ul class="bread_li">
+					<li><a href="#">Главная</a></li>
+					<li><a href="#">Новости</a></li>
+				</ul>
+			</div>
+			<div class="clearfix"></div>
+		</div>
+	</div>
+
+
+	<div class="container-fixed">
+		<div class="col-md-12 nopadding newsst">
+			<h2>Новости</h2>
+
+			<div class="col-md-3 nopadding-left newest">
+				<!-- блок -->
+				<div class="block block-actions col-md-12">
+					<h2>Акции<br>и распродажи</h2>
+
+					<div class="details">
+						Скидки до 60%, успейте купить в 2 раза дешевле<br>
+						<a href="#">Узнать больше</a>
+					</div>
+					<div class="bottom-bg" style="background:url(images/right_block_bg_1.png) 0 0 no-repeat; background-size:100%;">
+					</div>
+				</div>
+				<!-- конец блока -->
+				<!-- блок -->
+				<div class="block block-actions col-md-12">
+					<h2>Бесплатная<br>доставка</h2>
+
+					<div class="details">
+						Бесплатная доставка при заказе от 1000 руб<br>
+						<a href="#">Узнать больше</a>
+					</div>
+					<div class="bottom-bg" style="background:url(images/right_block_bg_2.png) 0 0 no-repeat; background-size:100%;">
+					</div>
+				</div>
+				<!-- конец блока -->
+			</div>
+
+			<div class="col-md-9 nopadding newest">
+				<!-- блок -->
+				<div class="block block-news col-md-4">
+					<div class="news_image"><img src="/images/news_flat.png"></div>
+					<h2>Запущена новая акция на все детские средства гигиены</h2>
+
+					<div class="details">
+						Существует бесконечная или как минимум очень большая мультивселенная, заполненная неким скалярным полем.
+					</div>
+
+					<div class="bottom_news"><a href="#">Подробнее</a><span class="date_news pull-right">10.05.2015</span></div>
+				</div>
+				<!-- конец блока -->
+				<!-- блок -->
+				<div class="block block-news col-md-4">
+					<div class="news_image"><img src="/images/news_flat.png"></div>
+					<h2>Запущена новая акция на все детские средства гигиены</h2>
+
+					<div class="details">
+						Существует бесконечная или как минимум очень большая мультивселенная, заполненная неким скалярным полем.
+					</div>
+
+					<div class="bottom_news"><a href="#">Подробнее</a><span class="date_news pull-right">10.05.2015</span></div>
+				</div>
+				<!-- конец блока -->
+				<!-- блок -->
+				<div class="block block-news col-md-4">
+					<div class="news_image"><img src="/images/news_flat.png"></div>
+					<h2>Запущена новая акция на все детские средства гигиены</h2>
+
+					<div class="details">
+						Существует бесконечная или как минимум очень большая мультивселенная, заполненная неким скалярным полем.
+					</div>
+
+					<div class="bottom_news"><a href="#">Подробнее</a><span class="date_news pull-right">10.05.2015</span></div>
+				</div>
+				<!-- конец блока -->
+				<!-- блок -->
+				<div class="block block-news col-md-4">
+					<div class="news_image"><img src="/images/news_flat.png"></div>
+					<h2>Запущена новая акция на все детские средства гигиены</h2>
+
+					<div class="details">
+						Существует бесконечная или как минимум очень большая мультивселенная, заполненная неким скалярным полем.
+					</div>
+
+					<div class="bottom_news"><a href="#">Подробнее</a><span class="date_news pull-right">10.05.2015</span></div>
+				</div>
+				<!-- конец блока -->
+				<!-- блок -->
+                <div id="baner_news_noshow">
+				<div class="block block-news col-md-4">
+					<div class="news_image"><img src="/images/news_flat.png"></div>
+					<h2>Запущена новая акция на все детские средства гигиены</h2>
+
+					<div class="details">
+						Существует бесконечная или как минимум очень большая мультивселенная, заполненная неким скалярным полем.
+					</div>
+
+					<div class="bottom_news"><a href="#">Подробнее</a><span class="date_news pull-right">10.05.2015</span></div>
+				</div>
+				<!-- конец блока -->
+				<!-- блок -->
+				<div class="block block-news col-md-4">
+					<div class="news_image"><img src="/images/news_flat.png"></div>
+					<h2>Запущена новая акция на все детские средства гигиены</h2>
+
+					<div class="details">
+						Существует бесконечная или как минимум очень большая мультивселенная, заполненная неким скалярным полем.
+					</div>
+
+					<div class="bottom_news"><a href="#">Подробнее</a><span class="date_news pull-right">10.05.2015</span></div>
+				</div>
+				<!-- конец блока -->
+				<!-- блок -->
+				<div class="block block-news col-md-4">
+					<div class="news_image"><img src="/images/news_flat.png"></div>
+					<h2>Запущена новая акция на все детские средства гигиены</h2>
+
+					<div class="details">
+						Существует бесконечная или как минимум очень большая мультивселенная, заполненная неким скалярным полем.
+					</div>
+
+					<div class="bottom_news"><a href="#">Подробнее</a><span class="date_news pull-right">10.05.2015</span></div>
+				</div>
+				<!-- конец блока -->
+				<!-- блок -->
+				<div class="block block-news col-md-4">
+					<div class="news_image"><img src="/images/news_flat.png"></div>
+					<h2>Запущена новая акция на все детские средства гигиены</h2>
+
+					<div class="details">
+						Существует бесконечная или как минимум очень большая мультивселенная, заполненная неким скалярным полем.
+					</div>
+
+					<div class="bottom_news"><a href="#">Подробнее</a><span class="date_news pull-right">10.05.2015</span></div>
+				</div>
+				<!-- конец блока -->
+				<!-- блок -->
+				<div class="block block-news col-md-4">
+					<div class="news_image"><img src="/images/news_flat.png"></div>
+					<h2>Запущена новая акция на все детские средства гигиены</h2>
+
+					<div class="details">
+						Существует бесконечная или как минимум очень большая мультивселенная, заполненная неким скалярным полем.
+					</div>
+
+					<div class="bottom_news"><a href="#">Подробнее</a><span class="date_news pull-right">10.05.2015</span></div>
+				</div>
+				<!-- конец блока -->
+                    </div>
+
+				<div class="navi">
+					<a href="#" class="navi-prev"></a>
+					<a href="#" class="navi-page current">1</a>
+					<a href="#" class="navi-page ">2</a>
+					<a href="#" class="navi-page ">3</a>
+					<a href="#" class="navi-page ">4</a>
+					<a href="#" class="navi-page ">5</a>
+					<a href="#" class="navi-next"></a>
+				</div>								
+			</div>
+			<div class="clearfix"></div>
+		</div>
+		<div class="clearfix"></div>
+	</div>
+
+	<div class="latest-bg">
+		<div class="container-fixed">
+			<div class="col-md-12 nopadding">
+				<div class="new shadow">
+                    <div class="slider-title">
+                        <div class="page_novunu_nazv_strel">
+                            <div class="col-md-12">
+                                <div class="col-xs-4">
+                                    <span class="nav nav-prev pull-right" id="page_novunu_strel_shov_1"></span>
+                                </div>
+                                <div class="col-xs-4">
+                                    <h2 class="pull-left" id="page_novunu_strel_shov_novun">Новинки</h2>
+                                </div>
+                                <div class="col-xs-4">
+                                    <span class="nav nav-next pull-right" id="page_novunu_strel_shov_2"></span>
+                                </div>
+                                <div class="col-xs-12">
+                                    <span id="page_novunu_strel_shov_novun" > <a class="all_new pull-right" href="/new">Все новинки</a></span>
+                                </div>
+                            </div>
+
+
+                        </div>
+                        <div>
+                            <h2 class="pull-left" id="page_novunu_strel_shov_3">Новинки</h2>
+                            <span class="nav nav-next pull-right" id="page_novunu_strel_shov_3"></span>
+                            <span class="nav nav-prev pull-right" id="page_novunu_strel_shov_4"></span>
+                            <span id="button_novunku_noshow"> <a class="all_new pull-right" href="/new">Все новинки</a></span>
+                        </div>
+                    </div>
+
+                    <div class="clearfix" style="
+    margin-bottom: 10px;"></div>
+					<div class="slider">
+						<!-- блок -->
+						<div class="block block-product">
+							<div class="preview">
+								<span class="beg-new"></span>
+								<a href="#">
+									<img src="images/products/product_1.png" alt="">
+								</a>
+							</div>
+							<div class="details">
+								<a href="#">Детская коляска-трансформер Kacper Tessuto</a>
+							</div>
+							<div class="bottom">
+								<span class="price">409 240 <span>руб.</span></span>
+								<span class="add">
+									<a href="#" class="btn btn-cart"></a>
+								</span>
+							</div>
+						</div>
+						<!-- конец блока -->
+						<div class="block block-product">
+							<div class="preview">
+								<span class="beg-new"></span>
+								<a href="#">
+									<img src="images/products/product_2.png" alt="">
+								</a>
+							</div>
+							<div class="details">
+								<a href="#">Детская коляска Kacper Classic</a>
+							</div>
+							<div class="bottom">
+								<span class="price">409 240 <span>руб.</span></span>
+								<span class="add">
+									<a href="#" class="btn btn-select">выбрать</a>
+								</span>
+							</div>
+						</div>
+						<div class="block block-product">
+							<div class="preview">
+								<span class="beg-new"></span>
+								<a href="#">
+									<img src="images/products/product_4.png" alt="">
+								</a>
+							</div>
+							<div class="details">
+								<a href="#">Проектор звездного неба Roxy-kids Colibri</a>
+							</div>
+							<div class="bottom">
+								<span class="price">409 240 <span>руб.</span></span>
+								<span class="add">
+									<a href="#" class="btn btn-cart"></a>
+								</span>
+							</div>
+						</div>
+						<div class="block block-product">
+							<div class="preview">
+								<span class="beg-new"></span>
+								<a href="#">
+									<img src="images/products/product_4.png" alt="">
+								</a>
+							</div>
+							<div class="details">
+								<a href="#">WEINA Ночной музыкальный светильник МИШКИ ДРУЗЬЯ</a>
+							</div>
+							<div class="bottom">
+								<span class="price">409 240 <span>руб.</span></span>
+								<span class="add">
+									<a href="#" class="btn btn-cart"></a>
+								</span>
+							</div>
+						</div>
+						<div class="block block-product">
+							<div class="preview">
+								<span class="beg-new"></span>
+								<a href="#">
+									<img src="images/products/product_1.png" alt="">
+								</a>
+							</div>
+							<div class="details">
+								<a href="#">Детская коляска Kacper Classic</a>
+							</div>
+							<div class="bottom">
+								<span class="price">409 240 <span>руб.</span></span>
+								<span class="add">
+									<a href="#" class="btn btn-cart"></a>
+								</span>
+							</div>
+						</div>
+						<div class="block block-product">
+							<div class="preview">
+								<span class="beg-new"></span>
+								<a href="#">
+									<img src="images/products/product_3.png" alt="">
+								</a>
+							</div>
+							<div class="details">
+								<a href="#">Детская коляска-трансформер Kacper Tessuto</a>
+							</div>
+							<div class="bottom">
+								<span class="price">409 240 <span>руб.</span></span>
+								<span class="add">
+									<a href="#" class="btn btn-cart"></a>
+								</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<div id="footer">
+		<div class="container-fixed">
+			<div class="col-md-3 nopadding info">
+				<div class="about">
+					<span class="graylogo"><i></i></span>
+				</div>
+	
+				<div class="footer-menu">
+					<ul>
+						<li><a href="#">О магазине</a></li>
+						<li><a href="#">Доставка и оплата</a></li>
+						<li><a href="#">Как сделать заказ</a></li>
+						<li><a href="#">Гарантия</a></li>
+						<li><a href="#">Акции</a></li>
+						<li><a href="#">Контакты</a></li>
+					</ul>
+				</div>
+				<div class="footer-copy">© Все права защищены  2015</div>
+			</div>
+			<div class="col-md-6 nopadding payment">
+				<h2>Принимаем к оплате</h2>
+				<div class="payments-block">
+					<span class="picon"><i class="sberbank"></i></span>
+					<span class="picon"><i class="alfabank"></i></span>
+					<span class="picon"><i class="visa"></i></span>
+					<span class="picon"><i class="mastercard"></i></span>
+					<span class="picon"><i class="webmoney"></i></span>
+					<span class="picon"><i class="qiwi"></i></span>
+					<span class="picon"><i class="yamoney"></i></span>
+					<span class="picon"><i class="mail"></i></span>
+					<span class="picon"><i class="dollars"></i></span>
+					<span class="picon"><i class="paypal"></i></span>
+					<div class="clearfix"></div>
+				</div>
+				<div class="col-md-5 nopadding">
+					<span class="view-reviews">Смотрите обзоры продуктов<br>присоединяйтесь к нам:</span>
+				</div>
+				<div class="col-md-6 nopadding socio">
+					<ul>
+						<li class="socio-vk"><a href="#"></a></li>
+						<li class="socio-fb"><a href="#"></a></li>
+						<li class="socio-yb"><a href="#"></a></li>
+					</ul>
+				</div>
+				<div class="clearfix"></div>
+			</div>
+			<div class="col-md-3 nopadding contact">
+				<h2>Контакты</h2>
+				<div class="contact-block">
+					<span class="phone">8 (495) 755 94 22</span>
+					<a href="#callback_modal" class="btn btn-call_back" data-toggle="modal" data-target="#callback_modal">Обратный звонок</a>
+					<span class="time">С <strong>9:00 до 21:00</strong> без выходных</span>
+
+					<span class="city">г. Москва</span>
+					<span class="address">ул Лермонтова, д. 34</span>
+				</div>
+			</div>
+			<div class="clearfix"></div>
+		</div>
+	</div>
+
+</body>
+</html>
